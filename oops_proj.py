@@ -19,9 +19,9 @@ class Chatbook:
         elif user_input == '2':
             self.sigin()
         elif user_input == '3':
-            pass
+            self.write_post()
         elif user_input == '4':
-            pass        
+            self.message_friend()    
         else:
             exit()
 
@@ -53,4 +53,20 @@ class Chatbook:
                 print("\n")
             self.menu()
 
-obj = Chatbook()
+    def write_post(self):
+        if self.loggedin == True:
+            post = input("What's on your mind?")
+            print("Your post has been published")
+        else:
+            print("You need to sign in first to write a post")
+            self.menu()
+
+    def message_friend(self):
+        if loggedin == True:
+            friend = input("Enter your friend's name")
+            msg = input("Enter your message")
+            print("Your message has been sent")
+        else:
+            print("You need to sign in first to write a post")
+            self.menu()
+#obj = Chatbook()
